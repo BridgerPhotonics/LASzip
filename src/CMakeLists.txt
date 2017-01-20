@@ -66,6 +66,10 @@ set(LASZIP_CPP
     laszip_dll.cpp
 )
 
+set(LASZIP_RC
+    versioninfo.rc
+)
+
 add_definitions(-DUNORDERED)
 add_definitions(-DLASZIPDLL_EXPORTS)
 
@@ -74,7 +78,9 @@ set(LASZIP_SOURCES
   ${LASZIP_CPP}
   )
 
-LASZIP_ADD_LIBRARY(${LASZIP_BASE_LIB_NAME} ${LASZIP_SOURCES})
+set_source_files_properties(${LASZIP_RC} PROPERTIES LANGUAGE RC)
+
+LASZIP_ADD_LIBRARY(${LASZIP_BASE_LIB_NAME} ${LASZIP_SOURCES} ${LASZIP_RC})
 
 set_target_properties(${LASZIP_BASE_LIB_NAME} PROPERTIES VERSION "${LASZIP_BUILD_VERSION}"
     SOVERSION "${LASZIP_API_VERSION}"
