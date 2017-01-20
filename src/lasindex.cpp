@@ -50,7 +50,7 @@
     #include <unordered_map>
     using namespace std;
   #else
-    #include <tr1/unordered_map>
+    #include <unordered_map>
     using namespace std;
     using namespace tr1;
   #endif
