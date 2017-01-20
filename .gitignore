@@ -1,0 +1,3 @@
+build_win32
+build_win64
+src/versioninfo.aps
